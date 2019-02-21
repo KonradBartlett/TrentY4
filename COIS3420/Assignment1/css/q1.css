@@ -1,0 +1,29 @@
+body{
+  background-color:black;
+  color: white;
+    font-family: "Comic Sans MS";
+}
+
+td{
+  width:100px;
+  height:80px;
+  font-size:10pt;
+  background-color:red;
+  font-weight:bold;
+}
+
+td:empty{
+  background-color: black;
+}
+
+th{
+  width:50px;
+  font-weight:bold;
+}
+
+p{
+  background-color:blue;
+}
+td div:first-of-type{
+    background-color:blue;
+}

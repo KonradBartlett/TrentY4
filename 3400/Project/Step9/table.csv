@@ -1,0 +1,6 @@
+mID,Name,Description,Attack,Defence,Mana,Health,Bounty,Ability
+1, Helen, This enormous furred monster lairs in coastal areas. It attacks with rapid blows psionics and entangling webs. They live in bands of 4-20., 20, 30, 100, 100, 30, 2
+2, Judy, This massive infernal creature lairs in deep canyons. It leaps upon its prey, which includes mundane beasts, other monsters of the same type, and humans. It attacks with strangling grabs, a hypnotic song and electricity., 30, 10, 100, 100, 50, 11
+3, Tim, This medium-sized, phantasmal, chimeric creature dwells in prairies. It attacks with slashing claws, a hypnotic gaze and psionics., 20, 20, 100, 100, 50, 12
+4, Norman, This runty phantasmal beast dwells in city sewers. It stalks its prey, which includes small creatures, other predators, humans, and monstrous humanoids. It attacks with rapid blows, fire and electricity. They hunt in mobs of 2-12., 15, 20, 100, 100, 20, 1
+5, Robert, This massive humanoid beast makes its home in mountainous areas. It stalks its prey, which includes monstrous humanoids and large creatures. It attacks with dizzying blows, melee weapons and a petrifying gaze. They hunt in families of 3-15., 10, 20, 100, 100, 40, 7

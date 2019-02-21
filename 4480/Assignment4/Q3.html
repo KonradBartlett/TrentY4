@@ -1,0 +1,235 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<div class="main">
+<div>
+
+<div class="dcol">
+<h2>Input</h2>
+<p class="pi" id="ip0">Rotation matrix
+<br /><span class="dl"></span><input type="number" pattern="\d+(\.\d*)?" id="m00" value="1" oninput="update(0)"/>
+<span class="dl2"></span><input type="number" pattern="\d+(\.\d*)?" id="m01" value="0" oninput="update(0)"/>
+<span class="dl2"></span><input type="number" pattern="\d+(\.\d*)?" id="m02" value="0" oninput="update(0)"/> &nbsp;
+<br /><span class="dl"></span><input type="number" pattern="\d+(\.\d*)?" id="m10" value="0" oninput="update(0)"/>
+<span class="dl2"></span><input type="number" pattern="\d+(\.\d*)?" id="m11" value="1" oninput="update(0)"/>
+<span class="dl2"></span><input type="number" pattern="\d+(\.\d*)?" id="m12" value="0" oninput="update(0)"/> &nbsp;
+<br /><span class="dl"></span><input type="number" pattern="\d+(\.\d*)?" id="m20" value="0" oninput="update(0)"/>
+<span class="dl2"></span><input type="number" pattern="\d+(\.\d*)?" id="m21" value="0" oninput="update(0)"/>
+<span class="dl2"></span><input type="number" pattern="\d+(\.\d*)?" id="m22" value="1" oninput="update(0)"/>
+<p class="pi" id="ip4">Euler angles of multiple axis rotations<span name="spananglei"> (radians)</span>
+<br />
+<span class="dl2">x</span><input type="number" pattern="\d+(\.\d*)?" id="e0" value="0" oninput="update(4)"/>
+<span class="dl2">y</span><input type="number" pattern="\d+(\.\d*)?" id="e1" value="0" oninput="update(4)"/>
+<span class="dl2">z</span><input type="number" pattern="\d+(\.\d*)?" id="e2" value="0" oninput="update(4)"/>
+<div class="dcol">
+<h2>Output</h2>
+<script src="lib/onlymath.min.js"></script>
+<script>
+var quat = new THREE.Quaternion();
+var highlightedId = 'ip0';
+var inputMode = 0;
+function matrixToString(m)
+{
+    var r = m.elements;
+    var s = 
+         '[ ' +toFixedWidth(r[0])+', '+toFixedWidth(r[4])+', '+toFixedWidth(r[8])+';\n'
+        +'  ' +toFixedWidth(r[1])+', '+toFixedWidth(r[5])+', '+toFixedWidth(r[9])+';\n'
+        +'  ' +toFixedWidth(r[2])+', '+toFixedWidth(r[6])+', '+toFixedWidth(r[10])+' ]';    
+    return s;
+}
+function highlight(id)
+{
+    document.getElementById(highlightedId).classList.remove('phigh');
+    highlightedId = id;
+    document.getElementById(id).classList.add('phigh');
+}
+function setQ(q)
+{
+    q.normalize();
+    quat = q;
+    doOutput();
+}
+function doOutput()
+{
+    var q = quat;
+    var m = new THREE.Matrix4();
+    m.makeRotationFromQuaternion(q);
+    document.getElementById("resmatrix").value = matrixToString(m);
+  
+    var axis = [0, 0, 0];
+    var angle = 2 * Math.acos(q.w);
+    if (1 - (q.w * q.w) < 0.000001)
+    {
+        axis[0] = q.x;
+        axis[1] = q.y;
+        axis[2] = q.z;
+    }
+    else
+    {
+        var s = Math.sqrt(1 - (q.w * q.w));
+        axis[0] = q.x / s;
+        axis[1] = q.y / s;
+        axis[2] = q.z / s;
+    }
+
+    var eu = new THREE.Euler();
+    eu.setFromRotationMatrix(m, "XYZ");
+    document.getElementById("rese").value = '[ x: '+toReal(toAngle(eu.toArray()[0]))+', y: '+toReal(toAngle(eu.toArray()[1]))+', z: '+toReal(toAngle(eu.toArray()[2]))+' ]';
+
+    var spansi = document.getElementsByName('spananglei');
+    for (var i = 0; i < spansi.length; i++)
+    {
+        if (document.getElementById('iformatrad').checked)
+        {
+            spansi[i].textContent = ' (radians)';
+        }
+        else
+        {
+            spansi[i].textContent = ' (degrees)';
+        }
+    }
+     
+    var spansres = document.getElementsByName('spanangleres');
+    for (var i = 0; i < spansres.length; i++)
+    {
+        if (document.getElementById('resformatrad').checked)
+        {
+            spansres[i].textContent = ' (radians)';
+        }
+        else
+        {
+            spansres[i].textContent = ' (degrees)';
+        }
+    }
+}
+function update(mode)
+{
+    inputMode = mode;
+    var q = new THREE.Quaternion();
+    if (inputMode == 0)
+    {
+        var m = new THREE.Matrix4();
+        var m00 = document.getElementById("m00").value;
+        var m01 = document.getElementById("m01").value;
+        var m02 = document.getElementById("m02").value;
+        var m10 = document.getElementById("m10").value;
+        var m11 = document.getElementById("m11").value;
+        var m12 = document.getElementById("m12").value;
+        var m20 = document.getElementById("m20").value;
+        var m21 = document.getElementById("m21").value;
+        var m22 = document.getElementById("m22").value;
+        m.set(m00, m01, m02, 1, m10, m11, m12, 1, m20, m21, m22, 1, 0, 0, 0, 1);
+        q.setFromRotationMatrix(m);
+    }
+    else if (inputMode == 1)
+    {
+        q = new THREE.Quaternion(document.getElementById("q0").value, 
+            document.getElementById("q1").value, 
+            document.getElementById("q2").value, 
+            document.getElementById("q3").value);
+    }
+    else if (inputMode == 2)
+    {
+        q = new THREE.Quaternion();
+        var axis = new THREE.Vector3(document.getElementById("a0").value, 
+            document.getElementById("a1").value,
+            document.getElementById("a2").value);
+        axis.normalize();
+        q.setFromAxisAngle(axis, toRad(document.getElementById("a3").value));
+    }
+    else if (inputMode == 3)
+    {
+        var axis = new THREE.Vector3(document.getElementById("r0").value, 
+            document.getElementById("r1").value,
+            document.getElementById("r2").value);
+        var angle = toRad(axis.length());
+        axis.normalize();
+        q.setFromAxisAngle(axis, angle);
+    }
+    else if (inputMode == 4)
+    {
+        var e = new THREE.Euler(toRad(document.getElementById("e0").value), 
+            toRad(document.getElementById("e1").value),
+            toRad(document.getElementById("e2").value),
+            XYZ);
+        q.setFromEuler(e);
+    }
+    else if (inputMode ==5)
+    {
+        var m = new THREE.Matrix4();
+        var P = getVector("P");
+        var Q = getVector("Q");
+        var R = getVector("R");
+        var x = new THREE.Vector3();
+        var y = new THREE.Vector3();
+        var z = new THREE.Vector3();
+        x.subVectors(Q, P).normalize();
+        y.subVectors(R, P);
+        z.crossVectors(x, y).normalize();
+        y.crossVectors(z, x).normalize();
+        m.set(x.x, y.x, z.x, 1, x.y, y.y, z.y, 1, x.z, y.z, z.z, 1, 0, 0, 0, 1);
+        q.setFromRotationMatrix(m);
+    }
+    setQ(q);
+    highlight('ip' + inputMode);
+}
+function getVector(root)
+{
+    vx = document.getElementById(root + "x").value;
+    vy = document.getElementById(root + "y").value;
+    vz = document.getElementById(root + "z").value;
+    return new THREE.Vector3(vx, vy, vz);
+}
+function toRad(x)
+{
+    if (document.getElementById("iformatdeg").checked)
+    {
+        return x / 180 * Math.PI;
+    }
+    else
+    {
+        return x;
+    }
+}
+function toAngle(x)
+{
+    return x;
+}
+function toReal(x){
+	if (!isNaN(parseFloat(x)) && isFinite(parseFloat(x)))
+	{
+		return parseFloat(parseFloat(x).toFixed(7));
+	}
+	else
+	{
+		return x;
+	}
+}
+function toFixedWidth(x){
+	if (!isNaN(parseFloat(x)) && isFinite(parseFloat(x)))
+	{
+		var s = x.toFixed(7);
+                if (x >= 0) s = ' ' + s;
+                return s;
+	}
+	else
+	{
+		return x;
+	}
+}
+</script>
+<p>Rotation matrix
+<br /><textarea id="resmatrix" rows="3" cols="70" readonly></textarea>
+<p>Euler angles<span name="spanangleres"> (radians)</span>
+<br />
+<textarea id="rese" rows="1" cols="70" readonly></textarea>
+</div>
+
+</form>
+</div>
+</div>
+</body></html>

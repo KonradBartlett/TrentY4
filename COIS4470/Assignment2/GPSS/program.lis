@@ -1,0 +1,148 @@
+    Student GPSS/H Release 3.70 (EC236)      8 Feb 2019   22:53:04     File: C:\Users\Konra\OneDrive\Assignments\COIS4470\Assignment2\GPSS\program.gps
+
+    Line# Stmt#  If Do  Block#  *Loc	Operation	A,B,C,D,E,F,G	Comments  
+ 
+        1     1                 	SIMULATE			Start the simulation
+        2     2                 	INTEGER	&LIMIT		
+        3     3                 	LET	&LIMIT=600000		=Number of cars
+        4     4              1  	GENERATE	600,600		=Interarrival times of 10+-10minutes*60seconds
+        5     5              2  	SEIZE	DRIVE		
+        6     6              3  	QUEUE	INTERCOM		+SSQ1
+        7     7              4  	ADVANCE	180,60				=Place order times of 3+-1minutes*60seconds
+        8     8              5  	DEPART	INTERCOM		-SSQ1
+        9     9              6  	QUEUE	WINDOW			+SSQ2
+       10    10              7  	ADVANCE	15,3				=Move forward 15+-3seconds
+       11    11              8  	DEPART	WINDOW			-SSQ2
+       12    12              9  	RELEASE DRIVE
+       13    13             10  	QUEUE	BAG				+SSQ3
+       14    14             11  	ADVANCE	180, 120			=Wait to food 3+-2minutes*60seconds
+       15    15             12  	DEPART BAG				-SSQ3
+       16    16             13  	TABULATE	RES			Make a table with tabs RES
+       17    17             14  	TERMINATE	1			Decrease LIMIT by 1, move time forward by 1
+       18    18                  RES	TABLE	M1,600,600,600
+       19    19                 	START	&LIMIT		Start if LIMIT != 0
+       20    20                 	END					Else end
+
+Entity Dictionary (in ascending order by entity number; "*" => value conflict.)
+
+       Facilities: 1=DRIVE
+
+           Queues: 1=INTERCOM      2=WINDOW        3=BAG
+
+           Tables: 1=RES
+
+    Integer &Vars: 1=LIMIT
+
+Symbol   Value   EQU Defns  Context      References by Statement Number
+ 
+DRIVE        1              Facility         5    12
+ 
+BAG          3              Queue           13    15
+INTERCOM     1              Queue            6     8
+WINDOW       2              Queue            9    11
+ 
+RES          1          18  Table           16
+ 
+LIMIT        1           2  Integer          3    19
+
+
+
+Storage Requirements (Bytes)
+
+Compiled Code:      506
+Compiled Data:       40
+Miscellaneous:        0
+Entities:           728
+Common:           10000
+-----------------------
+Total:            11274
+
+
+
+GPSS/H Model Size:
+
+Control Statements      5
+Blocks                 14
+
+
+
+Simulation begins.
+
+Relative Clock: 3.6966E+08   Absolute Clock: 3.6966E+08
+
+
+
+Block Current     Total  Block Current     Total  
+1                600000  11               600000 
+2                600000  12               600000 
+3                600000  13               600000 
+4                600000  14               600000 
+5                600000 
+6                600000 
+7                600000 
+8                600000 
+9                600000 
+10               600000 
+
+
+
+          --Avg-Util-During--                                                               
+Facility  Total  Avail  Unavl     Entries    Average   Current  Percent  Seizing  Preempting
+           Time   Time   Time               Time/Xact   Status   Avail     Xact      Xact   
+   DRIVE  0.317                    600000     195.022    AVAIL                  
+
+
+
+   Queue     Maximum      Average       Total        Zero     Percent      Average      $Average     Qtable     Current
+            Contents     Contents      Entries     Entries     Zeros      Time/Unit    Time/Unit     Number    Contents
+INTERCOM           1        0.292      600000           0                  180.020       180.020                      0
+  WINDOW           1        0.024      600000           0                   15.002        15.002                      0
+     BAG           2        0.292      600000           0                  180.000       180.000                      0
+
+
+
+Table      RES
+
+Entries in Table   Mean Argument   Standard Deviation   Sum of Arguments
+      6.0000E+05        375.0223              34.6871         2.2501E+08   Non-Weighted
+
+       Upper    Observed     Percent  Cumulative  Cumulative    Multiple   Deviation
+       Limit   Frequency    of Total  Percentage   Remainder     of Mean   From Mean
+    600.0000  6.0000E+05    100.0000      100.00        0.00      1.5999      6.4859
+
+
+
+  Random    Antithetic     Initial     Current      Sample   Chi-Square
+  Stream      Variates    Position    Position       Count   Uniformity
+       1           OFF      100000     1900001     1800001      0.78
+
+
+
+Status of Common Storage
+
+    9736 bytes available
+     264 in use
+     648 used (max)
+
+Simulation complete.  Absolute Clock: 3.6966E+08
+
+
+
+Total Block Executions: 8400000
+
+Blocks / second:        44312842
+
+Microseconds / Block:   0.02
+
+
+
+Elapsed Time Used (Sec)
+ 
+Pass1:           0.00
+Sym/Xref         0.00
+Pass2:           0.00
+Load/Ctrl:       0.00
+Execution:       0.19
+Output:          0.00
+---------------------
+Total:           0.19

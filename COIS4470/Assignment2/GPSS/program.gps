@@ -1,0 +1,20 @@
+	SIMULATE			Start the simulation
+	INTEGER	&LIMIT		
+	LET	&LIMIT=600000		=Number of cars
+	GENERATE	600,600		=Interarrival times of 10+-10minutes*60seconds
+	SEIZE	DRIVE		
+	QUEUE	INTERCOM		+SSQ1
+	ADVANCE	180,60				=Place order times of 3+-1minutes*60seconds
+	DEPART	INTERCOM		-SSQ1
+	QUEUE	WINDOW			+SSQ2
+	ADVANCE	15,3				=Move forward 15+-3seconds
+	DEPART	WINDOW			-SSQ2
+	RELEASE DRIVE
+	QUEUE	BAG				+SSQ3
+	ADVANCE	180, 120			=Wait to food 3+-2minutes*60seconds
+	DEPART BAG				-SSQ3
+	TABULATE	RES			Make a table with tabs RES
+	TERMINATE	1			Decrease LIMIT by 1, move time forward by 1
+ RES	TABLE	M1,600,600,600
+	START	&LIMIT		Start if LIMIT != 0
+	END					Else end

@@ -1,0 +1,77 @@
+
+@import url('https://fonts.googleapis.com/css family=Titillium+Web:300,400,400i,600,600i,700');
+h1, h2, h3{
+  font-family: 'Titillium Web', 'Arial', sans-serif;
+}
+
+#mainnav a{
+  color: purple;
+}
+
+#mainnav a:hover{
+  color: teal;
+}
+
+#mainnav ol {
+  list-style: lower-roman;
+}
+
+#mainnav ol a{
+  color: green;
+}
+
+#mainnav ol a:hover{
+  color: teal;
+}
+
+p::first-line{
+  font-weight: bold;
+}
+
+h2 + p::first-letter{
+  color: #903;
+  float: left;
+  font-family: Georgia;
+  font-size: 75px;
+  line-height: 60px;
+  padding-top:
+  4px; padding-right: 8px;
+  padding-left: 3px;
+  font-style:
+  normal;
+}
+
+body p a:hover{
+  color:olive;
+}
+
+table {
+  border: 1px solid grey;
+}
+
+tr:nth-child(even){
+  background-color: #e0f5ff;
+}
+
+tr > :first-child{
+  font-style: italic;
+}
+
+a[href^="http"]{
+  color: #508658;
+}
+
+a[href^="/"], a[href^=".."]{
+  color: #4d6c92;
+}
+
+a[href$=".pdf"]{
+  background: url("../img/pdf16.png") no-repeat right;
+  color: purple;
+  padding-right: 1.3em;
+}
+
+div ol#references{
+  column-count: 3;
+  column-gap: 50px;
+}

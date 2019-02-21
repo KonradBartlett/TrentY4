@@ -1,0 +1,139 @@
+    Student GPSS/H Release 3.70 (EC236)      7 Feb 2019   10:38:33     File: C:\Users\Konra\OneDrive\Assignments\COIS4470\Lab1\program.gps
+
+    Line# Stmt#  If Do  Block#  *Loc	Operation	A,B,C,D,E,F,G	Comments  
+ 
+        1     1                 	SIMULATE				Start the simulation
+        2     2                 	INTEGER	&LIMIT		Define a variable limit
+        3     3                 	LET	&LIMIT=100	Set limit to 100
+        4     4              1  	GENERATE	10,5		Generate random number of customers between 10, 5
+        5     5              2  	QUEUE	LINE		Make a queue call line
+        6     6              3  	SEIZE	CHECKOUT	Take server checkout
+        7     7              4  	ADVANCE	7,5			Move forward 7, or 5 customers
+        8     8              5  	RELEASE	CHECKOUT	Release server checkout
+        9     9              6  	DEPART	LINE		Quit queue
+       10    10              7  	TABULATE	RES			Make a table with tabs RES
+       11    11              8  	TERMINATE	1			Decrease LIMIT by 1, move time forward by 1
+       12    12                  RES	TABLE	M1,5,5,10	Put time into a table in tab res, start at 5 between an increasing interval
+       13    13                 	START	&LIMIT		Start if LIMIT != 0
+       14    14                 	END						Else end
+
+Entity Dictionary (in ascending order by entity number; "*" => value conflict.)
+
+       Facilities: 1=CHECKOUT
+
+           Queues: 1=LINE
+
+           Tables: 1=RES
+
+    Integer &Vars: 1=LIMIT
+
+Symbol   Value   EQU Defns  Context      References by Statement Number
+ 
+CHECKOUT     1              Facility         6     8
+ 
+LINE         1              Queue            5     9
+ 
+RES          1          12  Table           10
+ 
+LIMIT        1           2  Integer          3    13
+
+
+
+Storage Requirements (Bytes)
+
+Compiled Code:      392
+Compiled Data:       40
+Miscellaneous:        0
+Entities:           648
+Common:           10000
+-----------------------
+Total:            11080
+
+
+
+GPSS/H Model Size:
+
+Control Statements      5
+Blocks                  8
+
+
+
+Simulation begins.
+
+Relative Clock: 978.1686   Absolute Clock: 978.1686
+
+
+
+Block Current     Total  
+1                   101 
+2           1       101 
+3                   100 
+4                   100 
+5                   100 
+6                   100 
+7                   100 
+8                   100 
+
+
+
+          --Avg-Util-During--                                                               
+Facility  Total  Avail  Unavl     Entries    Average   Current  Percent  Seizing  Preempting
+           Time   Time   Time               Time/Xact   Status   Avail     Xact      Xact   
+CHECKOUT  0.741                       100       7.248    AVAIL                  
+
+
+
+   Queue     Maximum      Average       Total        Zero     Percent      Average      $Average     Qtable     Current
+            Contents     Contents      Entries     Entries     Zeros      Time/Unit    Time/Unit     Number    Contents
+    LINE           2        0.848         101           0                    8.216         8.216                      1
+
+
+
+Table      RES
+
+Entries in Table   Mean Argument   Standard Deviation   Sum of Arguments
+        100.0000          8.2744               3.1969           827.4368   Non-Weighted
+
+       Upper    Observed     Percent  Cumulative  Cumulative    Multiple   Deviation
+       Limit   Frequency    of Total  Percentage   Remainder     of Mean   From Mean
+      5.0000     17.0000     17.0000       17.00       83.00      0.6043     -1.0242
+     10.0000     53.0000     53.0000       70.00       30.00      1.2086      0.5398
+     15.0000     28.0000     28.0000       98.00        2.00      1.8128      2.1038
+     20.0000      2.0000      2.0000      100.00        0.00      2.4171      3.6678
+
+
+
+  Random    Antithetic     Initial     Current      Sample   Chi-Square
+  Stream      Variates    Position    Position       Count   Uniformity
+       1           OFF      100000      100202         202      0.70
+
+
+
+Status of Common Storage
+
+    9608 bytes available
+     392 in use
+     520 used (max)
+
+Simulation complete.  Absolute Clock: 978.1686
+
+
+
+Total Block Executions: 802
+
+Blocks / second:        19186606
+
+Microseconds / Block:   0.05
+
+
+
+Elapsed Time Used (Sec)
+ 
+Pass1:           0.00
+Sym/Xref         0.00
+Pass2:           0.00
+Load/Ctrl:       0.00
+Execution:       0.00
+Output:          0.00
+---------------------
+Total:           0.00
