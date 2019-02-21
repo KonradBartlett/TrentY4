@@ -1,0 +1,62 @@
+body{
+  padding: 1em;
+}
+
+h2{
+  
+  font-size: 1.5em;
+  font-weight:bold;
+  margin-top:2em;
+}
+
+.parent{
+  background-color: #9bb4e2;
+  width:1000px;
+  padding:.5em;
+ 
+}
+
+.parent div{
+  font-size:5em;
+  color:#007620;
+  background-color: #FFF;
+  padding:auto 0;
+  width:1.5em;
+  text-align: center;
+  
+}
+
+.parent .special{
+  color:#FFF;
+  background-color: #007620;
+}
+
+#q3a{
+  width:1000px;
+  height:200px;
+  }
+
+
+#q3b{
+  height:700px;
+  
+}
+
+
+#q3c{
+  width:400px;
+  }
+
+
+#q3d{
+ 
+  height:150px;
+ 
+}
+
+
+#q3e{
+  height:150px;
+  
+}
+

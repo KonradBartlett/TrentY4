@@ -1,0 +1,29 @@
+/* Licensed under a BSD license. See ../license.html for license */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #aaa;
+  font-family: Sans-Serif;
+}
+
+canvas {
+  background-color: #fff;
+  border: 1px solid black;
+  /* NOTE: This size is changed if in iframe - see below '.iframe canvas' */
+  width: 400px;
+  height: 300px;
+  display: block;
+}
+
+#uiContainer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  font-family: monospace;

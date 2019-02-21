@@ -1,0 +1,77 @@
+#q3a.parent{
+   display: flex;
+   align-items: flex-end;
+   justify-content: space-between;
+}
+
+#q3b.parent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#q3c.parent{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+#q3d.parent{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+#q3d :nth-child(2){
+  align-self: flex-start;
+}
+
+#q3d :nth-child(3){
+  flex-grow: 1;
+  align-items: center;
+}
+
+#q3d :nth-child(4){
+  align-self: flex-start;
+}
+
+#q3d :nth-child(5){
+  align-self: flex-start;
+}
+
+#q3e.parent{
+  display: flex;
+  flex-direction: row;
+  color: yellow;
+}
+
+#q3e :nth-child(5){
+  order: 1;
+  align-self: flex-start;
+}
+
+#q3e :nth-child(3){
+  order: 2;
+  margin-right: auto;
+  align-self: flex-end
+}
+
+#q3e :nth-child(4){
+  order: 3;
+  align-self: flex-end;
+}
+
+#q3e :nth-child(6){
+  order: 4;
+  align-self: flex-end;
+}
+
+#q3e :nth-child(2){
+  order: 5;
+  align-self: flex-start;
+}
+
+#q3e :nth-child(1){
+  order: 6;
+}

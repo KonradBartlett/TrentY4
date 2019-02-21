@@ -1,0 +1,12 @@
+1,Reality Rift,Teleports the user and target to a point along the line between them. Slows the target's movement and attack speed.,0,Void,20,20
+2,Torrent,Summons a rising torrent that after a short delay hurls enemies into the sky stunning and dealing damage and slowing movement speed.,40,Water,40,40
+3,Smoke Screen,Throws down a smoke bomb silencing enemies and causing them to miss most attacks as well as slowing movement.,0,Air,20,10
+4,Sacred Arrow,"Fires a long-range arrow with deadly precision, which stuns and damages the first enemy it strikes. The studn duration ranges from 0.01 to 5 seconds, with bonus damage added, based on the distance the arrow travels to its target.",30,,0,30
+5,Shadow Strike,Hurls a poisoned dagger which deals large initial damage and then deals damage over time. The poisoned unit has its movement speed slowed for 15 seconds. An instance of damage is dealt every 3 seconds.,30,,0,30
+6,Split Shot,Shot is split into several arrows. These arrows deal a lower percent of normal damage.,20,,0,20
+7,Purification,Instantly heals an ally and damages all nearby enemies.,0,Air,20,20
+8,Magnetic Field,Generates a circular distortion field of magnetic energy that protects allies within it by evading attacks coming from outside the field.,20,Void,10,40
+9,Arcane Aura,Gives additional mana regeneration to all friendly units. This bonus is increased for the caster.,0,Air,30,30
+10,Mortal Strike,User passively gains a chance to deal bonus damage on an attack.,20,,0,20
+11,Retaliate,Counters all attacks dealing damage back to the attacker.,30,,0,50
+12,Fervor,With each continuous blow on the same target the attacker gains increased attack speed.,20,,0,30

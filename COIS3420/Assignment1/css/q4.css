@@ -1,0 +1,261 @@
+
+body {
+    padding: 0;
+    margin: 0;
+    background: BLACK;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+      text-shadow: 4px 5px 12px black;
+}
+
+.toggle-2,
+.toggle,
+[id^=drop] {
+    display: none;
+}
+
+
+nav {
+    margin: 0;
+    padding: 0;
+}
+
+nav:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+}
+
+h1 a {
+  color: white;
+}
+
+nav ul li {
+    margin: 0px;
+    display: inline-block;
+}
+
+nav a {
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin: 0 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: #717070;
+    opacity: .8;
+}
+
+nav ul li ul li a:hover {
+    color: #000;
+    background: #f8f9fa;
+    transition: 0.5s all;
+}
+
+.menu li a.active {
+    opacity: .8;
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 25px;
+    background: #333;
+    padding: 10px;
+    border-radius: 4px;
+    left: 38%;
+}
+
+nav ul li:hover>ul {
+    display: inherit;
+}
+
+nav ul ul li {
+    width: 170px;
+    float: none;
+    display: list-item;
+    position: relative;
+    border-radius: 4px;
+    transition: 0.5s all;
+}
+
+nav ul ul li:nth-child(4) {
+    margin-bottom: 5px;
+}
+
+nav ul ul li a {
+    color: white;
+    padding: 4px 10px;
+    display: block;
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+nav ul ul ul li {
+    position: relative;
+    top: -60px;
+    left: 170px;
+}
+
+
+li>a:only-child:after {
+    content: '';
+}
+
+/* banner */
+.banner_pvt {
+    background: url(../img/2.jpg) no-repeat center;
+    background-size: cover;
+    min-height: 850px;
+	  position: relative;
+    z-index: 1;
+}
+
+.banner-text {
+    padding: 10em 0 1em;
+}
+
+.banner-bot {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 3em 4em;
+    max-width: 850px;
+}
+
+.banner-bot p {
+    border-color: rgba(255, 255, 255, 0.39) !important;
+}
+
+a.logo {
+    font-size: 48px;
+    letter-spacing: 6px;
+}
+
+.banner-text.text-center p {
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.button-style {
+    padding: 14px 34px;
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-radius: 10px;
+    border-color: rgba(238, 238, 238, 0.23);
+    margin-top: 3em;
+}
+
+.title-bg {
+    background: url(../img/tit-bg.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+
+h3.tittle {
+    font-size: 36px;
+}
+
+.title-bg p {
+    max-width: 700px;
+    font-size: 13px;
+}
+
+.grids-tem-one {
+    border: 1px solid #bbbaba;
+    padding: 20px;
+}
+
+.middle {
+    background: url(../img/bg1.jpg) no-repeat top;
+    background-size: cover;
+}
+
+.button-style-2 {
+    padding: 14px 24px;
+    border: none;
+    color: #332929;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #fff;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+a.button-style-3 {
+    border: 1px solid white;
+    color: white;
+    border-radius: 0px;
+    padding: 13px 22px;
+    background-color: black;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-top: 3em;
+}
+
+.banner-text-2 {
+    padding: 10em 0 1em;
+}
+
+.banner-bot-2 {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 3em 4em;
+    max-width: 600px;
+}
+
+.banner_pvt-3 {
+    background: url(../img/b2.jpg) no-repeat center;
+    background-size: cover;
+    min-height: 600px;
+
+    position: relative;
+    z-index: 1;
+}
+
+#thumbwrap {
+	margin:75px auto;
+	width:252px; height:252px;
+}
+
+.thumb {
+	float:left;
+	position:relative;
+	margin:3px;
+}
+
+.thumb img {
+	border:1px solid #000;
+	vertical-align:bottom;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.thumb:hover {
+	border:0;
+	z-index:1;
+}
+
+.thumb span {
+	position:absolute;
+	visibility:hidden;
+}
+
+.thumb:hover span {
+	visibility:visible;
+	top:37px; left:37px;
+  transform: scale(3);
+}

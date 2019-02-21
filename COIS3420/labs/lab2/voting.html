@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academy Awards Voting</title>
+</head>
+<body>
+  <div id="container">
+	  <header>
+      <img src="./img/oscars.jpg" alt="" height="150" width="267"/>
+      <h1>91<sup>st</sup> Annual Academy Awards</h1>
+      <h2>People's Choice Nomincation - Nominate & Win!</h2>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Rules & Regs</a></li>
+        <li><a href="#">2019 Nods</a></li>
+        <li><a href="#">Results</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <form action="/processvote.php">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" name="Name" pattern="[A-Za-z-0-9]+\s[A-Za-z-'0-9]+" id="name" required/>
+        </div>
+        <div>
+          <label for="movie">Move Choice:</label>
+          <select name="movie" id="movie"  required>
+            <option value="">Select One</option>
+            <option value="Tomb Raider" id="tomb">Tomb Raider</option>
+            <option value="2001: A Space Odyssey" id="2001">2001: A Space Odyssey</option>
+            <option value="No Game No Life: Re_Zero" id="Re_Zero">No Game No Life: Re_Zero</option>
+          </select>
+        </div>
+        <div>
+          <input type="checkbox" name="rules" id="rules" value="rules" checked required/>
+          <label for="rules">Yes, I am 21 years of age or older, and I acknowledge having read and accepted the <a href="#">Official Contest Rules</a></label>
+        <div>
+          <button type="submit" name="submit" id="submit">Submit Vote</button>
+        </div>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <span>
+        &COPY; 2019 Academy of Motion Picture Arts and Sciences
+      </span>
+    </footer>
+  </div>
+</body>
+</html>

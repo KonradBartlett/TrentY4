@@ -1,0 +1,40 @@
+header{
+  background-color: black;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+nav a{
+  background: #f0af1f;
+  color: white;
+}
+
+nav a:hover{
+  background: white;
+  color: #f0af1f;
+
+}
+
+h1{
+  color: #f0af1f;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+h2{
+  color: white;
+  font-size: 1.4em;
+}
+
+legend{
+  font-weight: bold;
+}
+
+label a{
+  color: #f0af1f;
+}
+
+footer{
+  text-align: center;
+  color: white;
+  background-color: black;
+}

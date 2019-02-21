@@ -1,0 +1,15 @@
+1,Mana Potion,Restores 20 mana. Mint green with blue flecks and boiling intensely contained in a pewter flask. The potion smells wonderful and tastes a bit like charcoal.,0,0,10
+2,Health Potion,Restores 20 health. White with yellow-orange swirls and crushed ice contained in a tall tumbler. The potion smells wonderful and tastes like blood.,0,0,10
+3,Strength Potion,Temporarily raises strength by 5. Sapphire with dark swirls and giving off plumes of smoke contained in a carved wooden flask. The potion smells acidic and tastes hellish.,0,0,20
+4,Agility Potion,Temporarily increases agility by 5. Opalescent white and fizzing  contained in a tall tumbler. The potion smells good and tastes like caramel.,0,0,20
+5,Intelligence Potion,Temporarily increases intelligence by 5. Copper with green swirls and almost boiling hot contained in a cup made of bark. The potion smells somewhat like fine wine and tastes sweet.,0,0,20
+6,Collector's Charm,Increases monster's bounty by 10% and slightly increases defence. A small quartz charm with a coin on the front and nothing on the back.,0,0,30
+7,Warrior's Charm,Increases warrior's attack by 20%. A lead charm with a greatsword and a wall on the front and the same on the back.,20,10,20
+8,Healer's Charm,Increases intelligence by 20%. A very large emerald charm with willow trees and an edible plant on the front and nothing on the back.,0,10,20
+9,Archer's Charm,Increases archer's attack by 20%. A dark bronze charm with an arrowhead and a treasure chest on the front and the same on the back.,20,0,20
+10,Mage's Charm,Increases mage's max mana by 20. A small garnet charm with several runes and a squirrel on the front and a leaf and willow trees in an ornate style on the back.,0,0,20
+11,Handaxe,This handaxe was forged by a long-dead hero and is stylized almost to the point of impracticality. The metal parts are made of bronze. It enhances the owner's speed. The source of its power is another plane. It requires periodic sacrifices or it will vanish.,30,0,30
+12,Armour,This suit of armor is traditionally used by rebels and is emblazoned with a crest. The buckles are inset with gems.,0,30,10
+13,Compound Bow,This compound bow was forged by witches entirely by accident and is covered with expensive gems. The grip is twined with silver wire. It cannot be touched by anyone but the owner and communicates with its owner. The source of its power is past triumphs.,20,0,30
+14,Staff,This staff looks slightly different based on who owns it. The grip is twined with bronze wire. It can spread vast clouds of darkness. It changes the owner's alignment to match its own. It causes its owner to be unable to lie.,20,10,30
+15,Longsword,This longsword always feels cold to the touch. The sheath and hilt are set with matching gems. It contains the force of an avalanche. It becomes sulky if not cleaned and paid attention to.,20,0,20

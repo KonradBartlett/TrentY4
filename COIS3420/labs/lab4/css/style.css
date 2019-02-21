@@ -1,0 +1,112 @@
+body{
+	font-size:100%;
+}
+
+header{
+	background-color:#000;
+	overflow: auto;
+}
+
+h1{
+	font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+	font-size: 2em;
+	color:#f0af1f;
+	border-top: 20px solid black;
+	}
+h2{
+	font-family: "Arial Narrow", Arial, sans-serif;
+	font-size:1.4em;
+	color:#fff;
+}
+
+#container{
+	width:50em;
+	border: 10px solid black;
+	border-radius: 1em
+}
+
+aside{
+	float: left;
+	width: 20%;
+	min-height: 400px;
+	border-right: 5px solid #f0af1f;
+}
+
+img{
+	float: left;
+}
+
+nav{
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-bottom: 20px;
+	border-top: 5px solid #f0af1f;
+	border-bottom: 5px solid #f0af1f;
+}
+
+nav a{
+	padding: 10px;
+	text-align: center;
+	padding: 10;
+	border: 5px solid #f0af1f;
+
+
+	text-align:center;
+  text-decoration: none;
+  background-color: #f0af1f;
+  color:#fff;
+}
+
+nav a:hover{
+  text-decoration: underline;
+  background-color:#fff;
+  color: #f0af1f;
+}
+
+nav li{
+		display: inline-block;
+		margin: 0.5em;
+}
+
+legend{
+  font-weight: bold;
+}
+
+main{
+	float: right;
+	width: 78%;
+
+}
+
+footer{
+  background-color: #000;
+  color:#fff;
+  text-align: center;
+	border-bottom: 10px solid black;
+	border-top: 5px solid #f0af1f;
+	padding-top: 15px;
+	clear: both;
+}
+
+a{
+  color: #f0af1f;
+
+}
+
+fieldset{
+	border: 5px solid #f0af1f;
+	border-radius: 0.7em;
+	padding: 10px;
+	width: 400px;
+}
+
+
+form div{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+sup{
+  font-size: 50%;
+  vertical-align:top;
+}

@@ -1,0 +1,14 @@
+	SIMULATE				Start the simulation
+	INTEGER	&LIMIT		Define a variable limit
+	LET	&LIMIT=100	Set limit to 100
+	GENERATE	10,5		Generate random number between 10, 5
+	QUEUE	LINE		Make a queue call line
+	SEIZE	CHECKOUT	Take server checkout
+	ADVANCE	7,5			Move forward 7, or 5
+	RELEASE	CHECKOUT	Release server checkout
+	DEPART	LINE		Quit queue
+	TABULATE	RES			Make a table with tabs RES
+	TERMINATE	1			Decrease LIMIT by 1, move time forward by 1
+ RES	TABLE	M1,5,5,10	Put time into a table in tab res, start at 5 between an increasing interval
+	START	&LIMIT		Start if LIMIT != 0
+	END						Else end
